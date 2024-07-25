@@ -3,15 +3,25 @@
 import { CircleArrowDown, RocketIcon } from "lucide-react";
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
+import useUpload from "@/hooks/useUpload";
 
 function FileUploader() {
-  const onDrop = useCallback((acceptedFiles: File[]) => {
-    console.log(acceptedFiles);
+  const { progress, status, fileId, handleUpload } = useUpload();
+
+  const onDrop = useCallback(async (acceptedFiles: File[]) => {
+    const file = acceptedFiles[0];
+    if (file) {
+    } else {
+    }
   }, []);
 
   const { getRootProps, getInputProps, isDragActive, isFocused, isDragAccept } =
     useDropzone({
       onDrop,
+      maxFiles: 1,
+      accept: {
+        "application/pdf": [".pdf"],
+      },
     });
 
   return (
