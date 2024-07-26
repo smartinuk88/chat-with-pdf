@@ -1,9 +1,16 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import useSubscription from "@/hooks/useSubscription";
+import { useUser } from "@clerk/nextjs";
 import { CheckIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 function PricingPage() {
+  const { user } = useUser();
+  const router = useRouter();
+  const { hasActiveMembership, loading } = useSubscription();
+
   return (
     <div>
       <div className="py-24 sm:py-32">
