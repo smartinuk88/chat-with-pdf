@@ -21,6 +21,7 @@
     "@mui/material": "^5.16.4",
     "@pinecone-database/pinecone": "^3.0.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-toast": "^1.2.1",
     "@react-pdf/renderer": "^3.4.4",
     "@stripe/stripe-js": "^4.1.0",
     "byte-size": "^9.0.0",

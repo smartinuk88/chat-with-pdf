@@ -11,9 +11,13 @@ import { useCallback, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import useUpload, { StatusText } from "@/hooks/useUpload";
 import { useRouter } from "next/navigation";
+import useSubscription from "@/hooks/useSubscription";
+import { useToast } from "./ui/use-toast";
 
 function FileUploader() {
   const { progress, status, fileId, handleUpload } = useUpload();
+  const { isOverFileLimit, filesLoading } = useSubscription();
+  const { toast } = useToast();
   const router = useRouter();
 
   useEffect(() => {
@@ -26,7 +30,16 @@ function FileUploader() {
     async (acceptedFiles: File[]) => {
       const file = acceptedFiles[0];
       if (file) {
-        await handleUpload(file);
+        if (!isOverFileLimit && !filesLoading) {
+          await handleUpload(file);
+        } else {
+          toast({
+            variant: "destructive",
+            title: "Free Plan File Limit Reached",
+            description:
+              "You have reached the maximum number of files allowed for your account. Please upgrade to add more documents.",
+          });
+        }
       } else {
       }
     },
