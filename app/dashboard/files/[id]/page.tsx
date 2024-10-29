@@ -22,7 +22,7 @@ async function ChatToFilePage({ params: { id } }: { params: { id: string } }) {
         <PDFView url={url} />
       </div>
 
-      <div className="lg:col-span-2 overflow-y-auto">
+      <div className="border-t-2 border-t-indigo-600 lg:border-t-0 lg:col-span-2 overflow-y-auto">
         <Chat id={id} />
       </div>
     </div>

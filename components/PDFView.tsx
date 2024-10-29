@@ -26,6 +26,22 @@ function PDFView({ url }: { url: string }) {
   const [scale, setScale] = useState<number>(1);
 
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setScale(0.75);
+      } else {
+        setScale(1);
+      }
+    };
+
+    handleResize();
+
+    // Update scale on screen resize
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
     const fetchFile = async () => {
       const response = await fetch(url);
       const file = await response.blob();
@@ -53,7 +69,7 @@ function PDFView({ url }: { url: string }) {
               }
             }}
           >
-            Previous
+            Prev
           </Button>
 
           <p className="flex items-center justify-center">
