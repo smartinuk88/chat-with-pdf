@@ -4,7 +4,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: "Chat With PDF",
+  title: "Chat to PDF",
   description:
     "An AI powered app that allows the user to chat with their PDF document. Built with Next.js",
 };
