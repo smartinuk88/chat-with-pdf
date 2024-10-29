@@ -6,8 +6,8 @@ import UpgradeButton from "./UpgradeButton";
 
 function Header() {
   return (
-    <div className="flex justify-between bg-white shadow-sm p-5 border-b">
-      <Link href="/dashboard" className="text-2xl">
+    <div className="flex justify-between items-center bg-white shadow-sm p-5 border-b">
+      <Link href="/dashboard" className="md:text-2xl">
         Chat to <span className="text-indigo-600">PDF</span>
       </Link>
 

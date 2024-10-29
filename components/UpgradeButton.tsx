@@ -24,7 +24,8 @@ function UpgradeButton() {
     return (
       <Button asChild variant="default" className="border-indigo-600">
         <Link href="/dashboard/upgrade">
-          Upgrade <StarIcon className="ml-3 fill-indigo-600 text-white" />
+          <span className="hidden sm:inline">Upgrade</span>
+          <StarIcon className="sm:ml-3 fill-indigo-600 text-white" />
         </Link>
       </Button>
     );
