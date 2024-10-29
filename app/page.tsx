@@ -55,24 +55,28 @@ export default function Home() {
     <main className="bg-gradient-to-bl from-white to-indigo-600 flex-1 overflow-scroll p-2 lg:p-5">
       <div className="bg-white py-24 sm:py-32 rounded-md drop-shadow-xl">
         <div className="flex flex-col justify-center items-center mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl sm:text-center">
-            <h2 className="text-base font-semibold leading-7 text-indigo-600">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-sm sm:text-base font-semibold leading-7 text-indigo-600">
               Your Interactive Document Companion
             </h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            <p className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               Transform Your PDFs Into Interactive Conversations
             </p>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Introducing{" "}
-              <span className="font-bold text-indigo-600">Chat to PDF.</span>
+            <p className="mt-6 sm:text-lg leading-8 text-gray-600">
+              Introducing {<br />}
+              <span className="font-bold text-2xl sm:text-4xl text-indigo-600">
+                Chat to PDF
+              </span>
               <br />
               <br />
               Upload your document, and our chatbot will answer questions,
-              summarise content, and answer all your Qs. Ideal for everyone,{" "}
-              <span className="text-indigo-600">Chat to PDF</span> turns static
-              documents into{" "}
+              summarise content, and answer all your queries. Ideal for
+              everyone, <span className="text-indigo-600">
+                Chat to PDF
+              </span>{" "}
+              turns static documents into{" "}
               <span className="font-bold">dynamic conversations</span>,
-              enhancing productivity 10x fold effortlessly.
+              effortlessly enhancing productivity.
             </p>
           </div>
           <Button asChild className="mt-10">
